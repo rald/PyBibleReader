@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define VPL_MAX 32767
+#define VPL_MAX 256*256
 #define SEARCH_MAX 256
 
 void cls() {
@@ -46,7 +46,7 @@ int main() {
 	fgets(search,SEARCH_MAX,stdin);
 
 	fin=fopen("kjv.vpl","r");
-	while(fgets(vpl,VPL_MAX-1,fin)) {
+	while(fgets(vpl,VPL_MAX-2,fin)) {
 		if(strcasestr(vpl,search)!=NULL) printf("%s",vpl);
 	}
 
