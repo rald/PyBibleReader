@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define VPL_MAX 256*256
+#define VPL_MAX 32767
 #define SEARCH_MAX 256
 
 void cls() {
