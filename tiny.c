@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define VPL_MAX 256*256
+#define VPL_MAX 32767
 #define SEARCH_MAX 256
 
 void cls() {
@@ -34,11 +34,9 @@ int main() {
 
 	char vpl[VPL_MAX];
 	char search[SEARCH_MAX];
-	char n[]="cruel";
 	char *p=NULL;
 	FILE *fin;
 
-	hidecursor();
 	textcolor(0x00,0xFF,0x00);
 	background(0x00,0x00,0x00);
 	cls();
@@ -46,8 +44,6 @@ int main() {
 
 	printf("Search: ");
 	fgets(search,SEARCH_MAX,stdin);
-	p=strrchr(vpl,'\n');
-	if(p) *p=0;
 
 	fin=fopen("kjv.vpl","r");
 	while(fgets(vpl,VPL_MAX-1,fin)) {
